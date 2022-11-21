@@ -560,7 +560,7 @@ void sound_to_frames(VideoState *is, short **b, int s, int c, int format)
     {
         if (format == AV_SAMPLE_FMT_FLTP)
         {
-            for (l=0;l < is->audio_st->codecpar->channels;l++ )
+            for (l=0;l < audio_channels;l++ )
             {
                 fb[l] = (float*)b[l];
             }
@@ -568,16 +568,16 @@ void sound_to_frames(VideoState *is, short **b, int s, int c, int format)
             {
                 volume = 0;
                 if (planar)
-                    for (l=0;l < is->audio_st->codecpar->channels;l++ ) volume += *((fb[l])++) * 64000;
+                    for (l=0;l < audio_channels;l++ ) volume += *((fb[l])++) * 64000;
                 else
-                    for (l=0;l < is->audio_st->codecpar->channels;l++ ) volume += *((fb[0])++) * 64000;
-                *audio_buffer_ptr++ = volume / is->audio_st->codecpar->channels;
-                avg_volume += abs(volume / is->audio_st->codecpar->channels);
+                    for (l=0;l < audio_channels;l++ ) volume += *((fb[0])++) * 64000;
+                *audio_buffer_ptr++ = volume / audio_channels;
+                avg_volume += abs(volume / audio_channels);
             }
         }
         else
         {
-            for (l=0;l < is->audio_st->codecpar->channels;l++ )
+            for (l=0;l < audio_channels;l++ )
             {
                 sb[l] = (short*)b[l];
             }
@@ -585,11 +585,11 @@ void sound_to_frames(VideoState *is, short **b, int s, int c, int format)
             {
                 volume = 0;
                 if (planar)
-                    for (l=0;l < is->audio_st->codecpar->channels;l++ ) volume += *((sb[l])++);
+                    for (l=0;l < audio_channels;l++ ) volume += *((sb[l])++);
                 else
-                    for (l=0;l < is->audio_st->codecpar->channels;l++ ) volume += *((sb[0])++);
-                *audio_buffer_ptr++ = volume / is->audio_st->codecpar->channels;
-                avg_volume += abs(volume / is->audio_st->codecpar->channels);
+                    for (l=0;l < audio_channels;l++ ) volume += *((sb[0])++);
+                *audio_buffer_ptr++ = volume / audio_channels;
+                avg_volume += abs(volume / audio_channels);
             }
         }
     }
