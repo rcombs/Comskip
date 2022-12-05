@@ -6,5 +6,10 @@
 #endif
 #define _UNICODE
 
+#if defined(_WIN32) && !defined(_WIN64)
+#define MAXWIDTH 4096
+#define MAXHEIGHT 2160
+#else
 #define MAXWIDTH	8000
 #define MAXHEIGHT	4800
+#endif
