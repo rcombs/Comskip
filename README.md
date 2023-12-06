@@ -20,8 +20,12 @@ Recommended way to install dependencies is MacPorts.
 ```
 sudo port -v install autoconf automake libtool pkgconfig argtable ffmpeg6 libsdl coreutils
 ```
+### Installation
+Due to bug in FFmpeg6 not providing required `mem_internal.h` file in MacPorts
+installation I attached it here. Copy this to
+`/opt/local/libexec/ffmpeg6/include/libavutil` and run `bash autogen.sh && ./configure &&
+make` 
 
-Some libraries have incomplete or incorrect dependencies listed in their pkgconfig files. If static linking fails on your system, you'll need to override these by manually specifying the `argtable2_LIBS`, `ffmpeg_LIBS`, and `sdl_LIBS` environment variables with the required list of libraries and their locations.
 
 ### Ini file
 
