@@ -30,5 +30,10 @@ comskip.c.save-failed
 .cproject
 .project
 
+
+#VSCODE
+.vscode/
+=======
 # VS Code
 .vscode/*
+

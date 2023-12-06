@@ -733,7 +733,8 @@ int					sceneChangePercent;
 bool				lastFrameWasBlack = false;
 bool				lastFrameWasSceneChange = false;
 
-#include <libavutil/avutil.h>  // only for DECLARE_ALIGNED
+#include <libavutil/avutil.h>
+#include <libavutil/mem_internal.h>  // only for DECLARE_ALIGNED
 static DECLARE_ALIGNED(32, long, histogram)[256];
 static DECLARE_ALIGNED(32, long, lastHistogram)[256];
 
@@ -976,7 +977,7 @@ int					FindBlackThreshold(double percentile);
 int					FindUniformThreshold(double percentile);
 void				OutputFrameArray(bool screenOnly);
 void                OutputBlackArray();
-void				OutputFrame();
+void				OutputFrame(int frame_number);
 void				OpenOutputFiles();
 void				InitializeFrameArray(long i);
 void				InitializeBlackArray(long i);
@@ -13830,7 +13831,6 @@ return;
 
     fclose(raw);
 }
-
 
 
 void OutputFrameArray(bool screenOnly)
