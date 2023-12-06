@@ -347,6 +347,7 @@ static void signal_handler (int sig)
 
 
 #define AUDIOBUFFER	1600000
+#include <libavutil/mem_internal.h>
 
 static double base_apts = 0.0, apts, top_apts = 0.0;
 static DECLARE_ALIGNED(16, short, audio_buffer[AUDIOBUFFER]);

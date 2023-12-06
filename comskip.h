@@ -1,9 +1,10 @@
 #ifndef COMSKIP
 #define COMSKIP
 #endif
-#ifdef _WIN32
-#define PACKAGE_STRING " Comskip 0.82.011"
-#endif
+
+#define PACKAGE_STRING "Comskip 0.82.011"
+
+
 #define _UNICODE
 
 #define MAXWIDTH	8000
@@ -14,4 +15,3 @@
 #endif
 
 // Not sure what is MacOS symbol so no ifndef but different version number
-#define PACKAGE_STRING " Comskip 0.82.012"
