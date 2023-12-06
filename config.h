@@ -363,3 +363,10 @@
 	#define ENABLE_FAST_CMOV 1
 	#define HAVE_FAST_CMOV 1
 #endif
+
+#ifdef ARCH_ARM64
+	#define ENABLE_CMOV 1
+	#define HAVE_CMOV 1
+	#define ENABLE_FAST_CMOV 1
+	#define HAVE_FAST_CMOV 1
+#endif
