@@ -12,6 +12,13 @@ Commercial detector
 - libargtable2 for option parsing
 - Optional: SDL for building the Comskip GUI
 
+### TODO
+[ ] Native GUI and drop SDL dependency
+[ ] Remove all code and configuration for other systems than MacOS
+[ ] Rewrite mpeg2dec to eliminate deprecated functions
+
+
+
 
 ### Setting up a build environment
 
