@@ -29,3 +29,11 @@ comskip.c.save-failed
 # Eclipse IDE
 .cproject
 .project
+
+
+#VSCODE
+.vscode/
+=======
+# VS Code
+.vscode/*
+
